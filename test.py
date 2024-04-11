@@ -34,9 +34,7 @@ def fn_display_veh_and_user(csv_vehicule_file_path, csv_utilisateur_file_path):
             	print(f"Véhicule - Marque : {vehicule_info['marque']}, Modèle : {vehicule_info['modele']}, Plaque d'immatriculation : {vehicule_info['immatriculation_id']}, Nom utilisateur : {item['nom']}, Prénom utilisateur : {item['prenom']}")   
 
 
-
 csv_file_1 = "csv/liste_ecole_nv.csv"
 csv_file_2 = "csv/park_auto.csv"
-
 
 fn_display_vehicule(csv_file_1)
