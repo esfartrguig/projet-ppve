@@ -1,3 +1,4 @@
+type;matricule;prenom;nom;naissance;rue;numero;codepostal;agglomeration;ville;immatriculation
 eleve;el*165;Karen;Jackson;2037-08-05;Rue Jules Destrée;124;6183;Courcelles;Trazegnies;S-OWD-497
 eleve;el*8242;Brittany;Stokes;2035-07-22;Avenue de Waterloo;48;6000;Charleroi;Charleroi;S-MHB-422
 eleve;el*863;Jesse;Bridges;2040-10-03;Rue Hanoteau;64;6060;Charleroi;Gilly;S-AVF-127
