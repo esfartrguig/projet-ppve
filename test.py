@@ -20,13 +20,13 @@ def fn_display_vehicule(csv_file_path):
 def fn_display_veh_and_user(csv_vehicule_file_path, csv_utilisateur_file_path):
 	vehicules = {}
 
-	with open(csv_vehicule_file_path, newline='', encoding='utf-8') as csvfile:
-    	vehicule_reader = csv.DictReader(csvfile, delimiter=',')
+	with open(csv_vehicule_file_path, 'r', newline='', encoding='utf-8') as csvfile:
+    	vehicule_reader = csv.DictReader(csvfile, delimiter=';')
     	for item in vehicule_reader:
         	vehicules[item['id']] = item
 
-	with open(csv_utilisateur_file_path, newline='', encoding='utf-8') as csvfile:
-    	utilisateur_reader = csv.DictReader(csvfile, delimiter=',')
+	with open(csv_utilisateur_file_path, 'r', newline='', encoding='utf-8') as csvfile:
+    	utilisateur_reader = csv.DictReader(csvfile, delimiter=';')
     	for item in utilisateur_reader:
         	vehicule_id = item['vehicule_id']
         	if vehicule_id in vehicules:
@@ -35,6 +35,6 @@ def fn_display_veh_and_user(csv_vehicule_file_path, csv_utilisateur_file_path):
 
 
 csv_file_1 = "csv/liste_ecole_nv.csv"
-csv_file_2 = "csv/park_auto.csv"
+csv_file_2 = "csv/park_auto.csv" 
 
 fn_display_vehicule(csv_file_1)
