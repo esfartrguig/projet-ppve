@@ -17,15 +17,15 @@ def fn_display_vehicule(csv_file_path):
         for item in vehicule_reader:
             print(f"Type : {item["type"]}, Matricule : {item["matricule"]}, Prénom : {item["prenom"]}, Nom : {item["nom"]}, Date de naissance : {item["naissance"]}")
 
-def fn_display_veh_and_user(csv_vehicule_file_path, csv_utilisateur_file_path):
+def fn_display_veh_and_user(csv_parc_auto_file_path, csv_list_ecole_file_path):
 	vehicules = {}
 
-	with open(csv_vehicule_file_path, 'r', newline='', encoding='utf-8') as csvfile:
+	with open(csv_parc_auto_file_path, 'r', newline='', encoding='utf-8') as csvfile:
     	vehicule_reader = csv.DictReader(csvfile, delimiter=';')
     	for item in vehicule_reader:
         	vehicules[item['id']] = item
 
-	with open(csv_utilisateur_file_path, 'r', newline='', encoding='utf-8') as csvfile:
+	with open(csv_list_ecole_file_path, 'r', newline='', encoding='utf-8') as csvfile:
     	utilisateur_reader = csv.DictReader(csvfile, delimiter=';')
     	for item in utilisateur_reader:
         	vehicule_id = item['vehicule_id']
