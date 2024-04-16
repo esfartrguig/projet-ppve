@@ -18,23 +18,24 @@ def fn_display_vehicule(csv_file_path):
             print(f"Type : {item["type"]}, Matricule : {item["matricule"]}, Prénom : {item["prenom"]}, Nom : {item["nom"]}, Date de naissance : {item["naissance"]}")
 
 def fn_display_veh_and_user(csv_parc_auto_file_path, csv_list_ecole_file_path):
-	vehicules = {}
+    vehicules = {}
 
-	with open(csv_parc_auto_file_path, 'r', newline='', encoding='utf-8') as csvfile:
-    	vehicule_reader = csv.DictReader(csvfile, delimiter=';')
-    	for item in vehicule_reader:
-        	vehicules[item['id']] = item
+    with open(csv_parc_auto_file_path, 'r', newline='', encoding='utf-8') as csvfile:
+        vehicule_reader = csv.DictReader(csvfile, delimiter=';')
+        for item in vehicule_reader:
+            vehicules[item['immatriculation']] = item
 
-	with open(csv_list_ecole_file_path, 'r', newline='', encoding='utf-8') as csvfile:
-    	utilisateur_reader = csv.DictReader(csvfile, delimiter=';')
-    	for item in utilisateur_reader:
-        	vehicule_id = item['vehicule_id']
-        	if vehicule_id in vehicules:
-            	vehicule_info = vehicules[vehicule_id]
-            	print(f"Véhicule - Marque : {vehicule_info['marque']}, Modèle : {vehicule_info['modele']}, Plaque d'immatriculation : {vehicule_info['immatriculation_id']}, Nom utilisateur : {item['nom']}, Prénom utilisateur : {item['prenom']}")   
+    with open(csv_list_ecole_file_path, 'r', newline='', encoding='utf-8') as csvfile:
+        utilisateur_reader = csv.DictReader(csvfile, delimiter=';')
+        for item in utilisateur_reader:
+            user_immatriculation = item['immatriculation']
+            if user_immatriculation in vehicules:
+                vehicule_info = vehicules[user_immatriculation]
+                print(f"Nom utilisateur : {item['nom']}, Prénom utilisateur : {item['prenom']}, Véhicule - Marque : {vehicule_info['marque']}, Modèle : {vehicule_info['modele']}, Plaque d'immatriculation : {vehicule_info['immatriculation']}")
 
 
 csv_file_1 = "csv/liste_ecole_nv.csv"
 csv_file_2 = "csv/park_auto.csv" 
 
-fn_display_vehicule(csv_file_1)
+# fn_display_vehicule(csv_file_1)
+fn_display_veh_and_user(csv_file_2, csv_file_1)
