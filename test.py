@@ -30,8 +30,8 @@ def fn_display_veh_and_user(csv_parc_auto_file_path, csv_list_ecole_file_path):
                 vu_dict = {
                             "Nom utilisateur": item['nom'], 
                             "Prénom utilisateur": item['prenom'],
-                            "Véhicule - Marque": vehicule_info['marque'],
-                            "Modèle": vehicule_info['modele'],
+                            "Marque véhicule": vehicule_info['marque'],
+                            "Modèle véhicule": vehicule_info['modele'],
                             "Plaque d'immatriculation": vehicule_info['immatriculation']
                            }
                 vu_liste.append(vu_dict)
