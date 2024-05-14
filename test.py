@@ -30,8 +30,8 @@ def fn_display_veh_and_user(csv_parc_auto_file_path, csv_list_ecole_file_path):
                 vu_dict = {
                             "Nom utilisateur": item['nom'], 
                             "Prénom utilisateur": item['prenom'],
-                            "Marque véhicule": vehicule_info['marque'],
-                            "Modèle véhicule": vehicule_info['modele'],
+                            "Véhicule - Marque": vehicule_info['marque'],
+                            "Modèle": vehicule_info['modele'],
                             "Plaque d'immatriculation": vehicule_info['immatriculation']
                            }
                 vu_liste.append(vu_dict)
@@ -42,20 +42,14 @@ def tri_personnes(liste_personnes):
     liste_personnes_triee = sorted(liste_personnes, key=lambda x: (x['Nom utilisateur'], x['Prénom utilisateur']))
     return liste_personnes_triee
 
-# Chemins des fichiers CSV contenant les données sur les utilisateurs et les véhicules
+def filtrer_par_marque(liste_dicts, marque):
+    return [d for d in liste_dicts if d.get("Véhicule - Marque") == marque]
+
 csv_list_ecole_file_path = "csv/liste_ecole_nv.csv"
 csv_parc_auto_file_path = "csv/park_auto.csv"
-
-# Appel de la fonction pour afficher les détails des véhicules (peut être commenté si non nécessaire)
-# fn_display_vehicule(csv_parc_auto_file_path)
-
-# Appel de la fonction pour afficher les détails des utilisateurs et des véhicules qu'ils utilisent
-# (peut être commenté si non nécessaire)
-# fn_display_veh_and_user(csv_parc_auto_file_path, csv_list_ecole_file_path)
-
-# Appel de la fonction pour obtenir et trier les détails des utilisateurs et des véhicules qu'ils utilisent
 resultat = fn_display_veh_and_user(csv_parc_auto_file_path, csv_list_ecole_file_path)
 resultat_trie = tri_personnes(resultat)
-
+marque_filtree = filtrer_par_marque(resultat_trie, "TOYOTA")
+print(marque_filtree)
 # Affichage des résultats triés
-pprint(resultat_trie)
+pprint(marque_filtree)
