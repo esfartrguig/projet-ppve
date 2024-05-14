@@ -42,8 +42,8 @@ def tri_personnes(liste_personnes):
     liste_personnes_triee = sorted(liste_personnes, key=lambda x: (x['Nom utilisateur'], x['Prénom utilisateur']))
     return liste_personnes_triee
 
-def filtrer_par_marque(liste_dicts, marque):
-    return [d for d in liste_dicts if d.get("Véhicule - Marque") == marque]
+def filtrer_par_marque(liste, marque):
+    return [element for element in liste if element.get("Véhicule - Marque") == marque]
 
 csv_list_ecole_file_path = "csv/liste_ecole_nv.csv"
 csv_parc_auto_file_path = "csv/park_auto.csv"
