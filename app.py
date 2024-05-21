@@ -26,11 +26,11 @@ def index():
                 vehicule_info = vehicules[user_immatriculation]
                 # Création d'un dictionnaire contenant les détails de l'utilisateur et du véhicule utilisé
                 vu_dict = {
-                            "Nom utilisateur": item['nom'], 
-                            "Prénom utilisateur": item['prenom'],
-                            "Véhicule - Marque": vehicule_info['marque'],
-                            "Modèle": vehicule_info['modele'],
-                            "Plaque d'immatriculation": vehicule_info['immatriculation']
+                            "nom": item['nom'], 
+                            "prenom": item['prenom'],
+                            "marque": vehicule_info['marque'],
+                            "modele": vehicule_info['modele'],
+                            "plaque": vehicule_info['immatriculation']
                            }
                 vu_liste.append(vu_dict)
    
