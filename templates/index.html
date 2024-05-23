@@ -49,22 +49,19 @@
                 {% for line in data %}
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ line.id }}
+                        {{ line.nom }}
                     </td>
                     <td class="px-6 py-4">
                         {{ line.prenom }}
                     </td>
                     <td class="px-6 py-4">
-                        {{ line.nom }}
+                        {{ line.marque }}
                     </td>
                     <td class="px-6 py-4">
-                        {{ line.email }}
+                        {{ line.modele }}
                     </td>
-                    <td class="text-right px-6 py-3">
-                        <a href="{{ url_for('edit', id=line.id)}}"> <img src="https://img.icons8.com/?size=64&id=56304&format=png" alt="Edit icon" class="w-8"> </a>
-                    </td>
-                    <td class="text-right px-6 py-3">
-                        <a href="{{ url_for('delete', id=line.id    ) }}"> <img src="https://img.icons8.com/?size=512&id=CecQCdpL95Ej&format=png" alt="Delete icon" class="w-8 flex-grow-1"> </a>
+                    <td class="px-6 py-4">
+                        {{ line.plaque }}
                     </td>
                 </tr>
                 {% endfor %}
