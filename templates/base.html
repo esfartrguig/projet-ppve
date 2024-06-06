@@ -10,7 +10,7 @@
 
     <nav class="bg-white border-gray-200 dark:bg-gray-900">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="https://flowbite.com/" class="flex items-center">
+            <a href="static/img/voiture_free_ico.png" class="flex items-center">
                 <img src="{{ url_for('static', filename='img/voiture_free_ico.png') }}" class="h-8 mr-3" alt="Logo" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Gestion parc automobile</span>
             </a>
@@ -25,6 +25,9 @@
                 </li>
                 <li>
                     <a href="{{ url_for('encode_vehicule') }}" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Encode vehicule</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('encode_user') }}" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Encoder</a>
                 </li>
             </ul>
             </div>

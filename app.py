@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 import csv
 import os
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
-@app.route("/index", methods=['GET'])
+@app.route('/index', methods=['GET'])
 def index():
     csv_list_ecole_file_path = "csv/liste_ecole_nv.csv"
     csv_parc_auto_file_path = "csv/park_auto.csv"
@@ -58,6 +58,30 @@ def encode_vehicule():
                 writer.writerow(data)
                 return redirect('/index')
 
+@app.route('/encode_user', methods=['GET', 'POST'])
+def encode_user():
+    if request.method == 'POST':
+        type = request.form['type']
+        matricule = request.form['matricule']
+        birthday = request.form['birthday']
+        name = request.form['last_name']
+        firstname = request.form['first_name']
+        city = request.form['city']
+        agllo = request.form['agglo']
+        postal = request.form['code_postal']
+        street = request.form['street']
+        immatriculation = request.form['immatricule']
         
+        with open('csv/data.csv', mode='a', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow([type, matricule, firstname, name, birthday, city, agllo, postal, street, immatriculation])
+
+        return redirect(url_for('index'))
+    return render_template('encode_user.html')
+
+@app.route('/success')
+def success():
+    return "Les informations ont bien été encodées"
+
 if __name__ == '__main__':
     app.run(debug=True)

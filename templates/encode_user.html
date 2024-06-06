@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 hidden>{% block title %}Project park automobile école{% endblock %}</h1>
+
+    <div class="container mx-auto mt-10">
+        <form method="post">
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="type">
+                    Type
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="type" name="type" type="text" placeholder="élève/Prof">
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="matricule">
+                    Matricule
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="matricule" name="matricule" type="text" placeholder="el*139">
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="first_name">
+                    Prénom
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="first_name" name="first_name" type="text" placeholder="Pablo">
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="last_name">
+                    Nom
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="last_name" name="last_name" type="text" placeholder="Dupont">
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="birthday">
+                    Date de Naissance
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birthday" name="birthday" type="text" placeholder="15/05/2005">
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="city">
+                    Ville
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="city" name="city" type="text" placeholder="Namur">
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="agglo">
+                    Agglomeration
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="agglo" name="agglo" type="text" placeholder="Charleroi">
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="code_postale">
+                    Code postal
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="code_postale" name="code_postale" type="text" placeholder="6000">
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="street">
+                    Adresse
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="street" name="street" type="text" placeholder="rue des petitchien 5">
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="immatricule">
+                    Immatriculation
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="immatricule" name="immatricule" type="text" placeholder="S-REX-231">
+            </div>
+            <div class="flex items-center justify-between">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="submit">
+                    Valider
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
