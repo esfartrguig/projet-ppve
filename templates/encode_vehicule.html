@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Encoder mes informations {% endblock %}</h1>
+	<form method="POST" action="{{ url_for('encode_vehicule') }}">
+		<p>
+			<label for="Immatriculation">Immatriculation :</label>
+			<input type="text" id="Immatriculation" name="Immatriculation" required>
+		</p>
+		<p>
+			<label for="Num_de_serie">Numero de serie :</label>
+			<input type="text" id="Num_de_serie" name="Num_de_serie" required>
+		</p>
+		<p>
+			<label for="Marque">Marque :</label>
+			<input type="text" id="Marque" name="Marque" required>
+		</p>
+		<p>
+			<label for="Modele">Modele :</label>
+			<input type="text" id="Modele" name="Modele" required>
+		</p>
+		<p>
+			<label for="Date_debut">Date debut :</label>
+			<input type="text" id="Date_debut" name="Date_debut" required>
+		</p>
+		<p>
+			<label for="Date_fin">Date fin :</label>
+			<input type="text" id="Date_fin" name="Date_fin" required>
+		</p>
+		<p>
+			<button type="submit">Encoder</button>
+		</p>
+	</form>
+{% endblock %}
