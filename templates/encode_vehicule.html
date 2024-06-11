@@ -1,34 +1,50 @@
 {% extends 'base.html' %}
-
 {% block content %}
-<h1>{% block title %} Encoder mes informations {% endblock %}</h1>
-	<form method="POST" action="{{ url_for('encode_vehicule') }}">
-		<p>
-			<label for="Immatriculation">Immatriculation :</label>
-			<input type="text" id="Immatriculation" name="Immatriculation" required>
-		</p>
-		<p>
-			<label for="Num_de_serie">Numero de serie :</label>
-			<input type="text" id="Num_de_serie" name="Num_de_serie" required>
-		</p>
-		<p>
-			<label for="Marque">Marque :</label>
-			<input type="text" id="Marque" name="Marque" required>
-		</p>
-		<p>
-			<label for="Modele">Modele :</label>
-			<input type="text" id="Modele" name="Modele" required>
-		</p>
-		<p>
-			<label for="Date_debut">Date debut :</label>
-			<input type="text" id="Date_debut" name="Date_debut" required>
-		</p>
-		<p>
-			<label for="Date_fin">Date fin :</label>
-			<input type="text" id="Date_fin" name="Date_fin" required>
-		</p>
-		<p>
-			<button type="submit">Encoder</button>
-		</p>
-	</form>
+    <h1 hidden>{% block title %}Project park automobile école{% endblock %}</h1>
+
+    <div class="container mx-auto mt-10">
+        <form method="post">
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="immatriculation">
+                    Immatriculation
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="immatriculation" name="immatriculation" type="text" placeholder="1-WTF-251">
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="numserie">
+                    Numero de serie
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="numserie" name="numserie" type="text" placeholder="029319403812">
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="marque">
+                    Marque
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="marque" name="marque" type="text" placeholder="Renaut">
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="modele">
+                    Modele
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="modele" name="modele" type="text" placeholder="Capture">
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="start">
+                    Date debut
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="start" name="start" type="text" placeholder="15/05/2005">
+            </div>
+            <div class="mb-4">
+                <label class="block text-white font-bold mb-2" for="end">
+                    Date fin
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="end" name="end" type="text" placeholder="02/08/2025">
+            </div>
+            <div class="flex items-center justify-between">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="submit">
+                    Valider
+                </button>
+            </div>
+        </form>
+    </div>
 {% endblock %}

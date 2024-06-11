@@ -44,12 +44,12 @@ def encode_vehicule():
 
     elif request.method =='POST' :
         immatriculation = request.form['Immatriculation']
-        numdeserie = request.form['Num_de_serie']
+        numserie = request.form['Num_de_serie']
         marque = request.form['Marque']
         modele = request.form['Modele']
-        datedebut = request.form['Date_debut']
-        datefin = request.form['Date_fin']
-        data = [immatriculation,numdeserie,marque,modele,datedebut,datefin]
+        start = request.form['Date_debut']
+        end = request.form['Date_fin']
+        data = [immatriculation,numserie,marque,modele,start,end]
         file_path = os.path.realpath(__file__)
         work_dir = os.path.dirname(file_path)
         file_csv = f"{work_dir}/csv/park_auto.csv"
@@ -72,7 +72,7 @@ def encode_user():
         street = request.form['street']
         immatriculation = request.form['immatricule']
         
-        with open('csv/data.csv', mode='a', newline='') as file:
+        with open('csv/liste_ecole_nv.csv', mode='a', newline='') as file:
             writer = csv.writer(file)
             writer.writerow([type, matricule, firstname, name, birthday, city, agllo, postal, street, immatriculation])
 
